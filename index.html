@@ -146,21 +146,98 @@
       background-color: #112240;
     }
     
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
+    .about-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
     }
     
-    .about-text {
+    .about-text-content {
+      flex: 1;
+    }
+    
+    .about-intro {
       color: #cbd5e1;
-      margin-bottom: 1rem;
-      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.0625rem;
+      line-height: 1.7;
     }
     
-    .about-placeholder {
-      color: #64748b;
-      font-style: italic;
-      margin-top: 1.5rem;
+    .about-highlights {
+      margin: 2rem 0;
+    }
+    
+    .about-highlights-title {
+      color: #64ffda;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .about-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .about-list-item {
+      color: #cbd5e1;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    
+    .about-list-item::before {
+      content: "▹";
+      color: #64ffda;
+      position: absolute;
+      left: 0;
+      font-size: 1.125rem;
+    }
+    
+    .about-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .about-btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #64ffda;
+      color: #64ffda;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      font-size: 0.9375rem;
+    }
+    
+    .about-btn:hover {
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .about-btn-primary {
+      background-color: transparent;
+    }
+    
+    .about-btn-secondary {
+      background-color: transparent;
+    }
+    
+    .about-image-wrapper {
+      flex: 1;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    .about-image {
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      width: 100%;
     }
     /* CSS:ABOUT-END */
     
@@ -270,6 +347,24 @@
       .section {
         padding: 5rem 0;
       }
+      
+      .about-wrapper {
+        flex-direction: row;
+        gap: 3rem;
+        align-items: flex-start;
+      }
+      
+      .about-text-content {
+        flex: 1.2;
+      }
+      
+      .about-image-wrapper {
+        flex: 1;
+      }
+      
+      .about-intro {
+        font-size: 1.125rem;
+      }
     }
     
     @media (max-width: 767px) {
@@ -325,11 +420,39 @@
       <!-- SECTION:ABOUT-START -->
       <section id="about" class="section section-about" aria-labelledby="about-heading">
         <div class="container">
-          <div class="about-content">
-            <h2 id="about-heading" class="section-title">關於我(之後會用 Section SDD 替換)</h2>
-            <p class="about-text">這裡目前是 About 區的占位內容。未來這個區塊會包含個人背景介紹、工作經驗概述、教育背景,以及一張個人形象照片。</p>
-            <p class="about-text">內容將著重於展現專業能力、工作態度,以及對前端開發的熱情與願景。</p>
-            <p class="about-placeholder">開發者請注意:之後會用另一個 Prompt 產生正式內容,請把新的 section 程式碼整段貼在 SECTION:ABOUT-START 與 SECTION:ABOUT-END 兩個註解中間,完全取代現在這一區。</p>
+          <h2 id="about-heading" class="section-title">關於我</h2>
+          <div class="about-wrapper">
+            <div class="about-text-content">
+              <p class="about-intro">
+                我是一位前端工程師,專注於打造流暢且直覺的使用者介面。目前從事網頁開發工作,同時也熱衷於技術教學與接案專案,協助團隊與客戶實現他們的數位願景。主要技能涵蓋 HTML、CSS、JavaScript 及現代前端框架如 React 與 Vue.js。
+              </p>
+              <p class="about-intro">
+                我相信良好的溝通是專案成功的關鍵。在工作中,我重視與團隊成員及客戶的互動,喜歡把複雜的技術概念用清楚易懂的方式說明,確保每個人都在同一頁上。這種透明且開放的工作風格,讓我能更有效地解決問題並交付高品質的成果。
+              </p>
+              
+              <div class="about-highlights">
+                <h3 class="about-highlights-title">我可以協助您:</h3>
+                <ul class="about-list">
+                  <li class="about-list-item">打造響應式網站與現代化的使用者介面,確保在各種裝置上都有絕佳體驗</li>
+                  <li class="about-list-item">優化前端效能與程式碼品質,提升網站載入速度與維護性</li>
+                  <li class="about-list-item">提供技術諮詢與教學指導,協助團隊提升前端開發技能</li>
+                </ul>
+              </div>
+              
+              <div class="about-actions">
+                <a href="#projects" class="about-btn about-btn-primary">查看作品集</a>
+                <a href="#contact" class="about-btn about-btn-secondary">聯絡我</a>
+              </div>
+            </div>
+            
+            <div class="about-image-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop" 
+                alt="在筆記型電腦前專注撰寫程式碼的前端開發者工作情境" 
+                class="about-image"
+                loading="lazy"
+              >
+            </div>
           </div>
         </div>
       </section>
